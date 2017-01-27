@@ -1,0 +1,7 @@
+node_modules/
+bin/
+~dist/
+*.DSS_Store
+**.orig
+test_report/
+npm-debug.log

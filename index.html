@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Starter Kit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/animations.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        var head = document.getElementsByTagName("head")[0];
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.charset = "utf-8";
+        script.src = "static/main.js?v=" + Math.random();
+        head.appendChild(script);
+    </script>
+</body>
+</html>
