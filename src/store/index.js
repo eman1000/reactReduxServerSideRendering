@@ -10,7 +10,7 @@ export default (initialState = {}, history) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
-  let middleware = [thunk, routerMiddleware(history)];
+  let middleware = [thunk, log, routerMiddleware(history)];
   if (process.env.NODE_ENV !== "production") {
       middleware.push(log);
   }

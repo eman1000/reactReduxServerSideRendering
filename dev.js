@@ -1,6 +1,6 @@
 var exec = require("child_process").exec;
 
-var app = exec("node server NODE_ENV='development'", function (err, stdout, stderr) {
+var app = exec("babel-node server --presets es2015,stage-2 server NODE_ENV='development'", function (err, stdout, stderr) {
     if (err) {
        console.log(err);
        return;

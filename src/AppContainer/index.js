@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from "react";
+/*import React, { Component, PropTypes } from "react";
 import { Router } from "react-router";
 import { Provider } from "react-redux";
 
@@ -22,3 +22,17 @@ class AppContainer extends Component {
   }
 }
 export default AppContainer;
+*/
+
+import React from 'react';
+export default class AppView extends React.Component {
+  render() {
+    return (
+      <div id="app-view">
+        <h1>Todos</h1>
+        <hr />
+        {this.props.children}
+      </div>
+    );
+  }
+}
