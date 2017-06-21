@@ -1,10 +1,7 @@
 import request from "../../../util/request";
 import update from "react/lib/update";
-import { push } from "react-router-redux";
-import services from "../../../services";
 import constants from "./actionConstants";
 const {
-    TOGGLE_MODAL
 } = constants;
 
 function handleToggleModal(state, action){
@@ -24,6 +21,5 @@ const initialState = {
 };
 export default function homeReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type];
-
   return handler ? handler(state, action) : state;
 }

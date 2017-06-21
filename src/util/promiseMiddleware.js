@@ -17,7 +17,7 @@ export default function promiseMiddleware() {
       .catch(error => {
         next({ ...rest, error, type: FAILURE });
         
-        // Another benefit is being able to log all failures here
+        // Another benefit is being able to log all failures here 
         console.log(error);
         return false;
       });

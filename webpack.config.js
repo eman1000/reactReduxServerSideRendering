@@ -43,7 +43,11 @@ var config = {
                     loader: "url-loader?limit=100000"
                 }
         ]
-    }
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
 };
 
 if (process.env.NODE_ENV === "production") {

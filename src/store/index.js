@@ -7,21 +7,21 @@ import logger from "redux-logger";
 const log =  logger({ diff: true, collapsed: true });
 
 export default (initialState = {}, history) => {
-  // ======================================================
-  // Middleware Configuration
-  // ======================================================
-  let middleware = [thunk, log, routerMiddleware(history)];
-  if (process.env.NODE_ENV !== "production") {
-      middleware.push(log);
-  }
+    // ======================================================
+    // Middleware Configuration
+    // ======================================================
+    let middleware = [thunk, log, routerMiddleware(history)];
+        if (process.env.NODE_ENV !== "production") {
+        middleware.push(log);
+    }
 
-  const store = createStore(
-    makeRootReducer(),
-    initialState,
-    compose(
-      applyMiddleware(...middleware)
-    )
-  );
-  store.asyncReducers = {};
-  return store;
+    const store = createStore(
+        makeRootReducer(),
+        initialState,
+        compose(
+            applyMiddleware(...middleware)
+        )
+    );
+    store.asyncReducers = {};
+    return store;
 };
