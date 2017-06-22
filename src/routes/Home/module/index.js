@@ -14,11 +14,11 @@ const BACKEND_URL = "https://pixabay.com/api/?key=5701538-da0313fec5db349435216f
 
 export function getFakeData() {
     return (dispatch, store)=>{
-        axios.get(BACKEND_URL)
-        .then((res)=>{
+        request.get(BACKEND_URL)
+        .finish((error,res)=>{
             dispatch({
                 type:GET_FAKE_DATA,
-                payload:res.data
+                payload:res.body
             });
         });
     };

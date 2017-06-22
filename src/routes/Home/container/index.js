@@ -5,7 +5,7 @@ import {
     getFakeData
 } from "../module";
 
-Home.fetchData = ({ store }) => store.dispatch(FakeActions.getFakeData());
+//Home.fetchData = ({ store }) => store.dispatch(FakeActions.getFakeData());
 const mapStateToProps = (state) => ({
     dummyData:state.home.dummyData || {},
     name:state.home.name
