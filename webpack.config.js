@@ -6,7 +6,7 @@ var config = {
     entry: [
         "./src/client.js",
         "bootstrap-loader",
-        "babel-polyfill",
+        "babel-polyfill"
     ],
     output: {
         path: path.resolve(__dirname, "bin"),
@@ -21,21 +21,21 @@ var config = {
                 {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
-                    loader: "babel",
+                    loader: "babel-loader",
                     query: {
                         presets: ["es2015", "react", "stage-0"],
                     }
                 },
                 {
                     test: /\.json$/,
-                    loader: "json"
+                    loader: "json-loader"
                 },
                 {
                     test: /\.scss$/,
                     loaders: [
-                        "style",
-                        "css?modules&localIdentName=[name]---[local]---[hash:base64:5]",
-                        "sass"
+                        "style-loader",
+                        "css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]",
+                        "sass-loader"
                     ]
                 },
                 {
@@ -46,7 +46,7 @@ var config = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ],
 };
 

@@ -19,22 +19,9 @@ app.get("**/static/:key", (req, res)=>{
     res.sendFile(path.resolve(__dirname,"../bin/", req.params.key));
 });
 // Add headers
-app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:8081");
-
-    // Request methods you wish to allow
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
-
-    // Request headers you wish to allow
-    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With,content-type");
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader("Access-Control-Allow-Credentials", true);
-
-    // Pass to next layer of middleware
+app.all("/", function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
 });
 
@@ -68,7 +55,8 @@ app.use((req, res, next) => {
                         <html>
                             <head>
                                 <meta charset="utf-8">
-                                <title>Isomorphic Redux Demo</title>
+                                <title>Isomorphic Redux React</title>
+                                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
                                 <script type="application/javascript">
                                     window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
                                 </script>

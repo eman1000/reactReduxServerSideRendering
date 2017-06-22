@@ -1,5 +1,4 @@
-import request from "../../../util/request";
-import update from "react/lib/update";
+import update from "react-addons-update";
 import constants from "./actionConstants";
 import axios from "axios";
 //Import constants
@@ -14,12 +13,15 @@ const BACKEND_URL = "https://pixabay.com/api/?key=5701538-da0313fec5db349435216f
 
 export function getFakeData() {
     return (dispatch, store)=>{
-        request.get(BACKEND_URL)
-        .finish((error,res)=>{
+        axios.get(BACKEND_URL)
+        .then((res)=>{
             dispatch({
                 type:GET_FAKE_DATA,
-                payload:res.body
+                payload:res.data
             });
+        })
+        .catch((err)=>{
+            console.log(err);
         });
     };
 }
@@ -36,15 +38,15 @@ function handleGetFakeData(state, action){
 }
 
 const ACTION_HANDLERS = {
-  GET_FAKE_DATA:handleGetFakeData
+    GET_FAKE_DATA:handleGetFakeData
 };
 const initialState = {
     showPanel:{},
     name:"Eman"
 };
 const homeReducer = (state = initialState, action) => {
-  const handler = ACTION_HANDLERS[action.type];
-  return handler ? handler(state, action) : state;
+    const handler = ACTION_HANDLERS[action.type];
+    return handler ? handler(state, action) : state;
 };
 
 export default homeReducer;
