@@ -1,27 +1,19 @@
-import { applyMiddleware, compose, createStore } from "redux";
-import { routerMiddleware } from "react-router-redux";
 import thunk from "redux-thunk";
-import makeRootReducer from "./reducers";
+import { createStore, combineReducers, applyMiddleware, compose} from "redux";
+import * as reducers from "./reducers";
 import logger from "redux-logger";
 
 const log =  logger({ diff: true, collapsed: true });
 
-export default (initialState = {}, history) => {
-    // ======================================================
-    // Middleware Configuration
-    // ======================================================
-    let middleware = [thunk, log, routerMiddleware(history)];
-        if (process.env.NODE_ENV !== "production") {
-        middleware.push(log);
-    }
+let middleware = [thunk, log];
+let initialState = window.__INITIAL_STATE__;
+const reducer = combineReducers(reducers);
+const store   = createStore(
+    reducer,
+    initialState,
+    compose(
+        applyMiddleware(...middleware)
+    )
+);
 
-    const store = createStore(
-        makeRootReducer(),
-        initialState,
-        compose(
-            applyMiddleware(...middleware)
-        )
-    );
-    store.asyncReducers = {};
-    return store;
-};
+export default store;

@@ -1,3 +1,3 @@
 export default  {
-    TOGGLE_MODAL:"TOGGLE_MODAL",
+    GET_FAKE_DATA:"GET_FAKE_DATA",
 };

@@ -1,25 +1,50 @@
 import request from "../../../util/request";
 import update from "react/lib/update";
 import constants from "./actionConstants";
+import axios from "axios";
+//Import constants
 const {
+    GET_FAKE_DATA
 } = constants;
+//=====================================
+//Action Creators
+//=====================================
 
-function handleToggleModal(state, action){
+const BACKEND_URL = "https://pixabay.com/api/?key=5701538-da0313fec5db349435216f7c3&q=hotels&image_type=photo";
+
+export function getFakeData() {
+    return (dispatch, store)=>{
+        axios.get(BACKEND_URL)
+        .then((res)=>{
+            dispatch({
+                type:GET_FAKE_DATA,
+                payload:res.data
+            });
+        });
+    };
+}
+
+//======================================
+//Action Handlers / Reducers
+//======================================
+function handleGetFakeData(state, action){
     return update(state, {
-        showModal:{
-            $set:!state.showModal
+        dummyData:{
+            $set:action.payload
         }
     });
 }
-const ACTION_HANDLERS = {
-    TOGGLE_MODAL:handleToggleModal
-};
 
+const ACTION_HANDLERS = {
+  GET_FAKE_DATA:handleGetFakeData
+};
 const initialState = {
     showPanel:{},
     name:"Eman"
 };
-export default function homeReducer (state = initialState, action) {
+const homeReducer = (state = initialState, action) => {
   const handler = ACTION_HANDLERS[action.type];
   return handler ? handler(state, action) : state;
-}
+};
+
+export default homeReducer;
