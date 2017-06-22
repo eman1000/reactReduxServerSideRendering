@@ -9,7 +9,6 @@ import { createStore, combineReducers } from "redux";
 import { Provider }                     from "react-redux";
 import * as reducers from "../src/store/reducers";
 import axios from "axios";
-
 const app =  express();
 app.use("/static",express.static(path.resolve(__dirname, "../public")));
 app.get("**/main.js", (req, res)=>{
@@ -28,14 +27,20 @@ app.all("/", function(req, res, next) {
 app.use((req, res, next) => {
     const location = createLocation(req.url);
     const reducer  = combineReducers(reducers);
-    const BACKEND_URL = "https://pixabay.com/api/?key=5701538-da0313fec5db349435216f7c3&q=hotels&image_type=photo";
-    //const iniState = {home:{page:"Some state from server"}};
-        axios.get(BACKEND_URL)
-        .then(function (response) {
-            const defaultSate = response.data;
-            const store = createStore(reducer, {home:{dummyData:defaultSate}});
-            match({ routes, location }, (err, redirectLocation, renderProps) => {
+        match({ routes, location }, (err, redirectLocation, renderProps) => {
+            console.log(renderProps.components);
+            // Get the component tree
+            const components = renderProps.components;
+            // Extract our page component
+            const Comp = components[components.length - 1].WrappedComponent;
 
+            // Extract `fetchData` if exists
+            const fetchData = Comp && Comp.fetchData;
+            console.log(renderProps.components);
+            axios.all([fetchData()])
+            .then(axios.spread(function (response) {
+            const defaultSate = response.data;
+                const store = createStore(reducer, {home:{dummyData:defaultSate}});
                 if (err) {
                     console.error(err);
                     return res.status(500).end("Internal server error");
@@ -68,10 +73,10 @@ app.use((req, res, next) => {
                         </html>    
                     `;
                     res.send(HTML);
-            });
-        })
-        .catch(function (error) {
-            //console.log(error);
+                }))
+                .catch(function (error) {
+                    //console.log(error);
+                });
         });
 });
 app.listen(8081, (err)=>{

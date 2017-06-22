@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "node dev",
-    "test": "jest"
+    "test": "jest",
+    "flow": "flow"
   },
   "keywords": [
     "react",
@@ -55,6 +56,7 @@
     "babel-preset-stage-0": "6.16.0",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "0.26.1",
+    "flow-bin": "^0.48.0",
     "jest": "^18.1.0",
     "node-sass": "3.13.0",
     "react-test-renderer": "15.4.2",

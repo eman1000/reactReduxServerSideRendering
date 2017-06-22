@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 import Home from "../components/Home";
-
+import getFakeDataApi from "../../../../api";
 import {
     getFakeData
 } from "../module";
 
-//Home.fetchData = ({ store }) => store.dispatch(FakeActions.getFakeData());
+Home.fetchData = getFakeDataApi;
 const mapStateToProps = (state) => ({
     dummyData:state.home.dummyData || {},
     name:state.home.name
