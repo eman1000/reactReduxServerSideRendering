@@ -36,7 +36,7 @@ app.get("**/static/:key", (req, res)=>{
 app.use((req, res, next) => {
     const location = createLocation(req.url);
     const reducer  = combineReducers(reducers);
-    const BACKEND_URL = 'https://jsonplaceholder.typicode.com/photos';
+    const BACKEND_URL = 'https://pixabay.com/api/?key=5701538-da0313fec5db349435216f7c3&q=hotels&image_type=photo';
     //const iniState = {home:{page:"Some state from server"}};
 
 

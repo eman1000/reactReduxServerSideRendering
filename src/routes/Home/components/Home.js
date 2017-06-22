@@ -9,19 +9,19 @@ class Home extends React.Component {
 
   componentDidMount() {
     console.log(this);
-    this.props.getFakeData();
+    //this.props.getFakeData();
   }
   render() {
     const { dummyData, name, dispatch } = this.props;
     
     return (
       <div id="todo-list">
-     {this.props.dummyData.map((obj, index)=>{
+     {this.props.dummyData.hits.map((obj, index)=>{
 
         return (
           <div key={index}>
-            <h1>{obj.title}</h1>
-            <div><img src={obj.thumbnailUrl}/></div><br/>
+            <h1>{obj.user}</h1>
+            <div><img src={obj.previewURL}/></div><br/>
 
           </div>
         )
