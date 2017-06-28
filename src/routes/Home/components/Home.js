@@ -1,5 +1,9 @@
+import React from "react";
+import {IntlProvider, defineMessages, FormattedMessage} from "react-intl";
 
-import React                  from 'react';
+
+//Stateless components
+import SampleComponent from "./SampleComponent";
 class Home extends React.Component {
 
   componentDidMount() {
@@ -8,24 +12,29 @@ class Home extends React.Component {
   }
   render() {
     const { dummyData } = this.props;
-    const { hits } = dummyData || [];
+    const { results } = dummyData || [];
     return (
+    <IntlProvider locale={this.props.locale} defaultLocale={"en-US"} messages={this.props.messages}>
       <div id="todo-list">
-     { hits.map((obj, index)=>{
+     { results.map((obj, index)=>{
 
         return (
           <div key={index}>
-            <h1>{obj.user}</h1>
-            <div><img src={obj.previewURL}/></div><br/>
+            <SampleComponent
+                updateMessages={this.props.updateMessages}
+
+            />
+            <h1>{obj.first}</h1>
+            <div><img src={obj.picture.large}/></div><br/>
 
           </div>
-        )
+        );
      })
 
      }
-        
-        
+      
       </div>
+    </IntlProvider>
     );
   }
 }
