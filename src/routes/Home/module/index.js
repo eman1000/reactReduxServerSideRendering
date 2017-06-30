@@ -1,22 +1,13 @@
 // @flow
 import update from "react-addons-update";
-import constants from "./actionConstants";
 import axios from "axios";
 import getFakeDataApi from "../../../../api";
-//Import constants
-const {
-    GET_FAKE_DATA
-} = constants;
+import * as actionTypes from "./actionConstants";
+import * as types from "../../../../types";
 //=====================================
 //Action Creators
 //=====================================
 
-
-type State = {
-  name: String,
-  showPanel:Boolean,
-  dummyData:Object
-};
 type Action = { type: string; payload: Object };
 type Dispatch = (action: Action) => void;
 export function getFakeData(){
@@ -24,7 +15,7 @@ export function getFakeData(){
         axios.all([getFakeDataApi()])
         .then(axios.spread((res)=>{
             dispatch({
-                type:GET_FAKE_DATA,
+                type:actionTypes.GET_FAKE_DATA,
                 payload:res.data
             });
         }))
@@ -34,10 +25,14 @@ export function getFakeData(){
     };
 }
 
+
 //======================================
 //Action Handlers / Reducers
 //======================================
-function handleGetFakeData(state:State, action:Action):State{
+
+
+
+function handleGetFakeData(state:types.State, action:types.Action){
     return update(state, {
         dummyData:{
             $set:action.payload
@@ -51,7 +46,9 @@ const ACTION_HANDLERS = {
 const initialState = {
 };
 
-const homeReducer = (state:State = initialState, action: Action) => {
+//type Reducer<S, A: types.Action> = (S, A) => S;
+
+const homeReducer = (state:Object = initialState, action: Object) => {
     const handler = ACTION_HANDLERS[action.type];
     return handler ? handler(state, action) : state;
 };

@@ -1,0 +1,35 @@
+{
+	"map":{
+		"latitude":1022.222,
+		"longitude":122.3333
+	},
+	"rating":4,
+	"priceRange":{
+		"preposition":"per night",
+		"currency":"MYR",
+		"minPrice":50,
+		"maxPrice":50152.50,
+		"showDiscountedHotels":false
+	},
+	"reviewsRange":{
+		"minReviews":0,
+		"maxReviews":5
+	},
+	"popularFor":[{
+	    "label":"Business Travellers",
+	    "value":"businessTravellers"
+	}],
+	"neighborhood":[{
+		"label":"Meyeong-don",
+		"value":"Meyeong-don",
+		"total":255
+	}],
+	"facilities":[{
+		"label":"Swimming Pool",
+		"value":"SP",
+		"total":52
+	}],
+	"pageIndex":1,
+	"pageSize":10
+
+}

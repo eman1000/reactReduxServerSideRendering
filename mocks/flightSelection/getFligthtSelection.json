@@ -1,0 +1,150 @@
+ {
+
+    "flightSelection": {
+        "outbound": [{
+            "from": {
+                "cityCode": "KUL",
+                "cityName": "Kualar Lumpur",
+                "time": "12:30",
+                "date": "Tue 11 Jul"
+            },
+            "to": {
+                "cityCode": "SIN",
+                "cityName": "Singapore",
+                "time": "12:30",
+                "date": "Sun 22 Jul"
+            },
+            "stops": [{
+                "transit": {
+                    "from": {
+                        "cityCode": "KUL",
+                        "cityName": "Kualar Lumpur",
+                        "time": "12:30",
+                        "date": "Tue 11 Jul"
+                    },
+                    "to": {
+                        "cityCode": "PEN",
+                        "cityName": "Penang International Airport",
+                        "time": "12:30",
+                        "date": "Tuesday 11 July 2017"
+                    },
+                    "duration": "12h2min",
+                    "flight": {
+                        "name": "Malindo air",
+                        "code": "OD233",
+                        "model": "Boeing 220 aircraft"
+                    },
+                    "transitTime": "1h2min"
+                }
+            }, {
+                "transit": {
+                    "from": {
+                        "cityCode": "PEN",
+                        "cityName": "Penang International Airport",
+                        "time": "12:30",
+                        "date": "Tue 11 Jul"
+                    },
+                    "to": {
+                        "cityCode": "SIN",
+                        "cityName": "Singapore",
+                        "time": "12:30",
+                        "date": "Sun 22 Jul"
+                    },
+                    "duration": "12h2min",
+                    "flight": {
+                        "name": "Malindo air",
+                        "code": "OD233",
+                        "model": "Boeing 220 aircraft"
+                    },
+                    "transitTime": ""
+                }
+            }],
+            "duration": "12h2min",
+            "flight": {
+                "name": "Malindo air",
+                "code": "OD233",
+                "model": "Boeing 220 aircraft"
+            },
+            "cabinClass": [{
+                "class": "Economy",
+                "available":true,
+                "seatsLeft":5,
+                "price": 200
+            }]
+        }],
+        "inbound": [{
+            "from": {
+                "cityCode": "SIN",
+                "cityName": "Singapore",
+                "time": "12:30",
+                "date": "Tue 11 Jul"
+            },
+            "to": {
+                "cityCode": "KUL",
+                "cityName": "Kualar Lumpur",
+                "time": "12:30",
+                "date": "Sun 22 Jul"
+            },
+            "stops": [{
+                "transit": {
+                    "from": {
+                        "cityCode": "SIN",
+                        "cityName": "Singapore",
+                        "time": "12:30",
+                        "date": "Tue 11 Jul"
+                    },
+                    "to": {
+                        "cityCode": "PEN",
+                        "cityName": "Penang International Airport",
+                        "time": "12:30",
+                        "date": "Tuesday 11 July 2017"
+                    },
+                    "duration": "12h2min",
+                    "flight": {
+                        "name": "Malindo air",
+                        "code": "OD233",
+                        "model": "Boeing 220 aircraft"
+                    },
+                    "transitTime": "1h2min"
+                }
+            }, {
+                "transit": {
+                    "from": {
+                        "cityCode": "PEN",
+                        "cityName": "Penang International Airport",
+                        "time": "12:30",
+                        "date": "Tue 11 Jul"
+                    },
+                    "to": {
+                        "cityCode": "KUL",
+                        "cityName": "Kualar Lumpur",
+                        "time": "12:30",
+                        "date": "Sun 22 Jul"
+                    },
+                    "duration": "12h2min",
+                    "flight": {
+                        "name": "Malindo air",
+                        "code": "OD233",
+                        "model": "Boeing 220 aircraft"
+                    },
+                    "transitTime": ""
+                }
+            }],
+            "duration": "12h2min",
+            "flight": {
+                "name": "Malindo air",
+                "code": "OD233",
+                "model": "Boeing 220 aircraft"
+            },
+            "cabinClass": [{
+                "class": "Economy",
+                "available":true,
+                "seatsLeft":5,
+                "price": 200
+            }]
+        }],
+        "pricePerPerson":4500,
+        "taxAndFees":4500,
+        "totalPackagePrice":20000
+    }
+ }

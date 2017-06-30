@@ -1,10 +1,10 @@
 import thunk from "redux-thunk";
 import { createStore, combineReducers, applyMiddleware, compose} from "redux";
 import * as reducers from "./reducers";
-import logger from "redux-logger";
+import { createLogger } from "redux-logger";
 import {intlReducer} from "react-intl-redux";
 
-const log =  logger({ diff: true, collapsed: true });
+const log =  createLogger({ diff: true, collapsed: true });
 
 let middleware = [thunk, log];
 let initialState = window.__INITIAL_STATE__;

@@ -1,3 +1,2 @@
-export default  {
-    GET_FAKE_DATA:"GET_FAKE_DATA",
-};
+// @flow
+export const GET_FAKE_DATA: string = "GET_FAKE_DATA";

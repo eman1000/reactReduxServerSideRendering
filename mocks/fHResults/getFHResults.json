@@ -1,0 +1,71 @@
+{
+    "hotels": [{
+        "name": "China Boutique Hotel",
+        "image": "",
+        "address": "No 34 & 36, Jalan Hang Lekir, Off Jalan",
+        "topPick": true,
+        "rating": 4,
+        "reviews": {
+            "grade": "Excellent",
+            "numberOfReviews": 1960
+        },
+        "highlights": [
+            "Top Pick"
+        ],
+        "amenities": [
+            "Free Wifi",
+            "Breakfast"
+        ],
+        "preposition": "per night",
+        "freeCancellation": true,
+        "coupon": [{
+            "label": "Extra8",
+            "value": -104
+        }],
+        "pricePerPerson": {
+            "startingPrice": 1675.89,
+            "discountedPrice": 1196.18,
+            "amountSaved": 200
+        }
+    }],
+    "flights": {
+        "outbound": {
+            "from": {
+                "cityCode": "KUL",
+                "cityName":"Kualar Lumpur",
+                "time": "12:30",
+                "date": "Tue 11 Jul"
+            },
+            "to": {
+                "cityCode": "SIN",
+                "cityName":"Singapore",
+                "time": "12:30",
+                "date": "SUN 22 Jul"
+            },
+            "cabinClass": {
+                "class": "Economy",
+                "price": 200
+            }
+        },
+        "inbound": {
+            "from": {
+                "cityCode": "SIN",
+                "cityName":"Singapore",
+                "time": "12:30",
+                "date": "Tue 22 Jul"
+            },
+            "to": {
+                "cityCode": "KUL",
+                "cityName":"Kualar Lumpur",
+                "time": "12:30",
+                "date": "SUN 03 Aug"
+            },
+            "cabinClass": {
+                "class": "Economy",
+                "price": 200
+            }
+        }
+    },
+    "currency": "RM",
+    "totalPackagePrice":1396.98
+}

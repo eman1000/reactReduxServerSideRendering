@@ -1,0 +1,21 @@
+{
+	"packageId":"2a213c9b-c7d8-4511-8b2a-b97d02c1903e",
+	"sortOrderBy":"Priority",
+	"sortOrderByAsc":false,
+	"minPrice":753,
+	"maxPrice":40844,
+	"showDiscountedHotels":false,
+	"minReviews":2.5,
+	"maxReviews":5.0,
+	"popularFor":["families", "businessTravel"],
+	"neighborhood":["hongdae"],
+	"facilities":["GY","IN"],
+	"hotelName":"",
+	"hotelId":"94434343",
+	"stars":1,
+	"regionId":"",
+	"minDistance":0,
+	"maxDistance":5,
+	"pageIndex":1,
+	"pageSize":10
+}

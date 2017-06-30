@@ -1,12 +1,23 @@
+// @flow
 import React from "react";
 import { injectIntl, intlShape } from "react-intl";
-export const SampleComponent = ({intl, updateMessages}) => {
-	const { formatMessage } = intl;
+import type { HomeProps } from "../../../../../types";
+export const SampleComponent = ({intl, dummyData}:HomeProps) => {
+    const { results } = dummyData || [];
+    const { formatMessage } = intl;
     return (
-       <div >
-            <h1>{ formatMessage({id:"app.home.hello"})} JOhn Doe </h1>
-            <button onClick={()=>updateMessages("en-UP")}>Translate</button>
-            <br/>
+        <div>
+            <h1> {formatMessage({id:"app.home.hello"})} Eman </h1>
+
+            { results.map((obj, index)=>{
+                    return (
+                        <div key={index}>
+                            <h1>{obj.first}</h1>
+                            <div><img src={obj.picture.large}/></div>
+                        </div>
+                    );
+               })
+            }
        </div>
     );
 };

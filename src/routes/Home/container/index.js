@@ -1,3 +1,5 @@
+// @flow
+
 import { connect } from "react-redux";
 import Home from "../components/Home";
 import {updateIntl} from "react-intl-redux";
@@ -14,7 +16,7 @@ function updateMessages(locale) {
     };
 }
 
-Home.fetchData = getFakeDataApi;
+//Home.fetchData = getFakeDataApi;
 const mapStateToProps = (state) => ({
 	locale: state.intl.locale,
 	messages: state.intl.messages,

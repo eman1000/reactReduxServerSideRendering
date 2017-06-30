@@ -1,0 +1,16 @@
+ {
+ 	"from":"AMM",
+ 	"to":"SHJ",
+ 	"departureDate":"2017-07-07",
+ 	"returnDate":"2017-07-15",
+ 	"cabinClass":1,
+ 	"currency":"usd",
+ 	"roomCount":1,
+ 	"paxInfor":{
+ 		"adultCount":1
+ 	},
+ 	"journeyType":1,
+ 	"cultureCode":"en-US",
+ 	"productId":"dfdfdffdfd",
+ 	"ipAddress":"175.138.60.121"
+}
