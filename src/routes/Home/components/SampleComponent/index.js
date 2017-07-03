@@ -7,7 +7,7 @@ export const SampleComponent = ({intl, dummyData}:HomeProps) => {
     const { formatMessage } = intl;
     return (
         <div>
-            <h1> {formatMessage({id:"app.home.hello"})} Eman </h1>
+            <h1> {formatMessage({id:"app.home.hello"})} John Doe </h1>
 
             { results.map((obj, index)=>{
                     return (

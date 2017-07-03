@@ -17,6 +17,9 @@ import App from "../src/App";
 
 import { StaticRouter } from "react-router";
 import { matchRoutes } from "react-router-config";
+
+//For html head
+import {Helmet} from "react-helmet";
 const app =  express();
 app.use("/static",express.static(path.resolve(__dirname, "../public")));
 app.get("**/main.js", (req, res)=>{
@@ -70,12 +73,16 @@ app.use((req, res, next) => {
                 );
                     const initialState = store.getState();
                     const componentHTML = renderToString(InitialComponent);
+                    const helmet = Helmet.renderStatic();
                     const HTML = `
                         <!DOCTYPE html>
                         <html>
                             <head>
+                                ${helmet.title.toString()}
+                                ${helmet.meta.toString()}
+                                ${helmet.link.toString()}
                                 <meta charset="utf-8">
-                                <title>Isomorphic Redux React</title>
+                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                                 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
                                 <script type="application/javascript">
                                     window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
