@@ -2,6 +2,8 @@
 import React from "react";
 import { injectIntl, intlShape } from "react-intl";
 import type { HomeProps } from "../../../../../types";
+
+import * as css from "./SampleComponent.scss";
 export const SampleComponent = ({intl, dummyData}:HomeProps) => {
     const { results } = dummyData || [];
     const { formatMessage } = intl;
@@ -12,7 +14,7 @@ export const SampleComponent = ({intl, dummyData}:HomeProps) => {
             { results.map((obj, index)=>{
                     return (
                         <div key={index}>
-                            <h1>{obj.first}</h1>
+                            <h1 className={css.headerText}>Some Heading</h1>
                             <div><img src={obj.picture.large}/></div>
                         </div>
                     );

@@ -10,6 +10,7 @@ import SampleComponent from "./SampleComponent";
 class Home extends React.Component {
     componentDidMount() {
         this.props.getFakeData();
+       // this.props.getFHResults();
     }
     props:HomeProps;
     render() {

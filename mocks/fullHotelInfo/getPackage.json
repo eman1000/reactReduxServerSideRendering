@@ -1,0 +1,81 @@
+{
+    "currency": "RM",
+    "totalPackagePrice": 200000,
+    "paxInfor": {
+        "adultCount": 4
+    },
+    "numberOfRooms": 3,
+    "flights": {
+        "outbound": {
+            "from": {
+                "cityCode": "KUL",
+                "cityName": "Kualar Lumpur",
+                "time": "12:30",
+                "date": "Tue 11 Jul"
+            },
+            "to": {
+                "cityCode": "SIN",
+                "cityName": "Singapore",
+                "time": "12:30",
+                "date": "SUN 22 Jul"
+            },
+            "cabinClass": {
+                "class": "Economy",
+                "price": 200
+            }
+        },
+        "inbound": {
+            "from": {
+                "cityCode": "SIN",
+                "cityName": "Singapore",
+                "time": "12:30",
+                "date": "Tue 22 Jul"
+            },
+            "to": {
+                "cityCode": "KUL",
+                "cityName": "Kualar Lumpur",
+                "time": "12:30",
+                "date": "SUN 03 Aug"
+            },
+            "cabinClass": {
+                "class": "Economy",
+                "price": 200
+            }
+        }
+    },
+    "rooms": [{
+        "roomOption": [{
+            "type": "Double Superior",
+            "paxInfor": {
+                "adultCount": 4,
+                "children": 2
+            },
+            "showRoomOptions": [{
+                "label": "Breakfast Included",
+                "value": "BI"
+            }],
+            "name": "China Boutique Hotel",
+            "image": "",
+            "dimensions": "20sqm (215sqft)",
+            "smoking": false,
+            "amenities": [
+                "Free Wifi",
+                "Breakfast"
+            ],
+            "price": {
+                "startingPrice": 1675.89,
+                "discountedPrice": 1196.18,
+                "amountSaved": null,
+                "percentageSaved": 20
+            },
+            "preposition": "per night",
+            "offers": [
+                "Limited Time Offer: Includes 25% discount for booking now",
+                "Free Cancellation until Wed, 10 May",
+                "Free Parking",
+                "Free Internent"
+
+            ]
+        }]
+    }]
+}

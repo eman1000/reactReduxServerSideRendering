@@ -1,0 +1,16 @@
+{
+	"similarHotels": [{
+		"name": "China Boutique Hotel",
+		"images": [{
+			"image": "",
+			"caption": ""
+		}],
+		"rating": 4,
+		"reviews": {
+			"grade": "Excellent",
+			"numberOfReviews": 1960,
+			"price": 2000,
+			"preposition": "per night"
+		}
+	}]
+}

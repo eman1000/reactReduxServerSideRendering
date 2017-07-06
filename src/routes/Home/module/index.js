@@ -4,6 +4,9 @@ import axios from "axios";
 import getFakeDataApi from "../../../../api";
 import * as actionTypes from "./actionConstants";
 import * as types from "../../../../types";
+
+//mock api
+import services from "../../../services";
 //=====================================
 //Action Creators
 //=====================================
@@ -12,10 +15,26 @@ type Action = { type: string; payload: Object };
 type Dispatch = (action: Action) => void;
 export function getFakeData(){
     return (dispatch:Dispatch, store:Object)=>{
+        console.log(store().params);
         axios.all([getFakeDataApi()])
         .then(axios.spread((res)=>{
             dispatch({
                 type:actionTypes.GET_FAKE_DATA,
+                payload:res.data
+            });
+        }))
+        .catch((err)=>{
+            console.log(err);
+        });
+    };
+}
+
+export function getFHResults(){
+    return (dispatch:Dispatch, store:Object)=>{
+        axios.get(services.getFHResults)
+        .then(axios.spread((res)=>{
+            dispatch({
+                type:actionTypes.GET_FH_RESULTS,
                 payload:res.data
             });
         }))
@@ -40,8 +59,17 @@ function handleGetFakeData(state:types.State, action:types.Action){
     });
 }
 
+function handleGetFHData(state:types.State, action:types.Action){
+    return update(state, {
+        fhResults:{
+            $set:action.payload
+        }
+    });
+}
+
 const ACTION_HANDLERS = {
-    GET_FAKE_DATA:handleGetFakeData
+    GET_FAKE_DATA:handleGetFakeData,
+    GET_FH_RESULTS:handleGetFHData
 };
 const initialState = {
 };

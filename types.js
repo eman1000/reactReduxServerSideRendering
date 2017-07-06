@@ -10,6 +10,7 @@ export type HomeProps = {
 	locale:Object,
 	messages:Object,
 	getFakeData:Function,
+	getFHResults:Function,
 	intl:intlFormat
 };
 

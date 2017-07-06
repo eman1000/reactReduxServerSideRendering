@@ -1,0 +1,28 @@
+{
+    "grade": "Excellent",
+    "numberOfReviews": 1960,
+    "url": "",
+    "all": [{
+        "title": "Excellent wellness hotel",
+        "reviewBasedOn": [{
+            "label": "Service",
+            "value": 95,
+            "title": "Great location",
+            "description": ""
+        }],
+        "category": {
+            "label": "families",
+            "value": 355
+        }
+    }],
+    "goodToKnow": [{
+        "title": "Friendly atmosphere",
+        "description": "Peaceful",
+        "positive": true
+    }],
+    "badges":[{
+        "label":"",
+        "value":""
+    }]
+    
+}

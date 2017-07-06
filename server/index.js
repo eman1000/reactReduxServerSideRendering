@@ -20,10 +20,31 @@ import { matchRoutes } from "react-router-config";
 
 //For html head
 import {Helmet} from "react-helmet";
+//const window = typeof window === "undefined" ? "" : window;
 const app =  express();
+//Mocks
+
+app.all("**/mocks/:key1/:key2/index.json", (req, res)=>{
+    res.sendFile(path.resolve(__dirname, "../mocks/", req.params.key1 , req.params.key2 , "./index.json"));
+});
+app.all("**/mocks/:key1/:key2/index.json", (req, res)=>{
+    res.sendFile(path.resolve(__dirname, "../mocks/", req.params.key1 , req.params.key2 , "./index.json"));
+});
+app.all("**/mocks/:key/index.json", (req, res)=>{
+    res.sendFile(path.resolve(__dirname, "../mocks/", req.params.key, "./index.json"));
+});
+
+app.all("**/mocks/:key/index.json", (req, res)=>{
+    res.sendFile(path.resolve(__dirname, "../mocks/", req.params.key, "./index.json"));
+});
+
+
 app.use("/static",express.static(path.resolve(__dirname, "../public")));
 app.get("**/main.js", (req, res)=>{
     res.sendFile(path.resolve(__dirname,"../bin/main.js"));
+});
+app.get("**/main.css", (req, res)=>{
+    res.sendFile(path.resolve(__dirname,"../bin/main.css"));
 });
 app.get("**/static/:key", (req, res)=>{
     res.sendFile(path.resolve(__dirname,"../bin/", req.params.key));
@@ -84,6 +105,7 @@ app.use((req, res, next) => {
                                 <meta charset="utf-8">
                                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                                 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                                <link href="static/main.css" rel="stylesheet">
                                 <script type="application/javascript">
                                     window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
                                 </script>

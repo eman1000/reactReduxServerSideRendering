@@ -1,0 +1,33 @@
+{
+    "name": "China Boutique Hotel",
+    "images": [{
+        "image": "",
+        "caption": ""
+    }],
+    "address": "No 34 & 36, Jalan Hang Lekir, Off Jalan",
+    "description": "",
+    "rating": 4,
+    "reviews": {
+        "grade": "Excellent",
+        "numberOfReviews": 1960,
+        "url": ""
+    },
+    "map": {
+        "latitude": 1022.222,
+        "longitude": 122.3333
+    },
+    "nearByLocations": [{
+        "label": "Casino",
+        "value": "casino"
+    }],
+    "facilities": [{
+        "label": "Internet",
+        "value": "IN",
+        "description": "Free Wifi availbale"
+    }],
+    "hotelInformation": [{
+        "label": "Know Before You Go",
+        "value": "This property offers transfers"
+    }]
+
+}
