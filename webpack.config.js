@@ -99,7 +99,7 @@ var serverConfig = {
                             {
                                 loader: "css-loader",
                                 query: {
-                                    localIdentName: "[hash:8]",
+                                    localIdentName:"[name]---[local]---[hash:base64:5]",
                                     modules: true
                                 }
                             },
@@ -154,6 +154,7 @@ if (process.env.NODE_ENV === "production") {
 
 else {
     clientConfig.devtool = "source-map";
+    serverConfig.devtool = "source-map";
 }
 
 module.exports = [clientConfig, serverConfig];

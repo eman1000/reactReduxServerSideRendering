@@ -15,7 +15,7 @@ export const SampleComponent = ({intl, dummyData}:HomeProps) => {
                     return (
                         <div key={index}>
                             <h1 className={css.headerText}>Some Heading</h1>
-                            <div><img src={obj.picture.large}/></div>
+                            <div></div>
                         </div>
                     );
                })

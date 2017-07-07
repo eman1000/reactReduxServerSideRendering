@@ -4,10 +4,11 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import history from "react-router";
 
 render(
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter history={history}>
             <App/>
         </BrowserRouter>
     </Provider>,

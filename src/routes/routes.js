@@ -4,7 +4,7 @@ import getFakeDataApi from "../../api";
 
 const routes = [
 	{
-		path: "/:locale?/home",
+		path: "/:locale?/search/:from?/:to",
 		component: Home,
 		loadData: getFakeDataApi(),
 	},
