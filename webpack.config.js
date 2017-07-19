@@ -18,8 +18,8 @@ fs.readdirSync("node_modules")
 //bundle client
 var clientConfig = {
     entry: [
+        "webpack-hot-middleware/client",
         "./src/client.js",
-        "bootstrap-loader",
         "babel-polyfill"
     ],
     output: {
@@ -116,7 +116,6 @@ var serverConfig = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new ExtractTextPlugin({
             filename: "[name].css",

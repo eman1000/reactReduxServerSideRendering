@@ -20,6 +20,9 @@ import { matchRoutes } from "react-router-config";
 
 //For html head
 import {Helmet} from "react-helmet";
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 //const window = typeof window === "undefined" ? "" : window;
 const app =  express();
 //Mocks
@@ -56,6 +59,28 @@ app.all("/", function(req, res, next) {
     next();
 });
 
+const config = require("../webpack.config.js")[0];
+
+const compiler = webpack(config);
+
+app.use(webpackDevMiddleware(compiler, {
+    hot: true,
+  filename: 'main.js',
+  publicPath: config.output.publicPath,
+  stats: {
+    colors: true,
+  },
+  historyApiFallback: true,
+}));
+app.use(webpackHotMiddleware(compiler, {
+  log: console.log,
+  path: '/__webpack_hmr',
+  heartbeat: 10 * 1000,
+}));
+
+const HMR = require("./hmr.js").default;
+// Hot Module Reloading
+HMR(app);
 app.use((req, res, next) => {
 
         //Langauge

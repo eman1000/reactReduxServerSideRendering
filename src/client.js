@@ -4,13 +4,27 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import history from "react-router";
 
 render(
     <Provider store={store}>
-        <BrowserRouter history={history}>
+        <BrowserRouter>
             <App/>
         </BrowserRouter>
     </Provider>,
   document.getElementById("root")
 );
+
+if ( module.hot ) {
+  module.hot.accept("./App", () => {
+    const NextApp = require("./App").default;
+    render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <NextApp/>
+        </BrowserRouter>
+    </Provider>,
+      document.getElementById("root")
+    );
+  });
+}
+

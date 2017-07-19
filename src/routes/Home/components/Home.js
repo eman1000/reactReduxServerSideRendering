@@ -30,7 +30,7 @@ class Home extends React.Component {
                     <meta name="description" content="Home Component "/>
                     <meta name="keywords" content="React, JavaScript"/>
                 </Helmet>
-                <h1>Home</h1>
+                <h1>Home hb kkk</h1>
                 <h2>{this.props.pathname}</h2>
                 <button onClick={()=>this.onLogout()} className="btn btn-danger">New route</button>
                 <SampleComponent
